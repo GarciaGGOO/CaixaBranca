@@ -2,30 +2,30 @@
 
 ## Introdução
 
-O código presente no repositório trata-se de uma conexão com um banco de dados hipotético.
+Este repositório contém um código que se refere a uma conexão hipotética com um banco de dados.
 
 ## Estrutura do Código
 
-O código está organizado em uma classe Java chamada `User`. Esta classe tem os seguintes métodos e variáveis:
+O código está organizado em uma classe Java chamada `User`. Nesta classe, você encontrará os seguintes métodos e variáveis:
 
 - `conectarBD()`: Este método estabelece uma conexão com o banco de dados MySQL e retorna a conexão.
-- `verificarUsuario(String login, String senha)`: Este método verifica as credenciais do usuário no banco de dados e armazena o resultado em uma variável booleana `result` e o nome do usuário em `nome`.
+- `verificarUsuario(String login, String senha)`: Este método verifica as credenciais do usuário no banco de dados e armazena o resultado em uma variável booleana `autenticado` e o nome do usuário em `nomeDoUsuario`.
 
 ## Avaliação
 
 Aqui está uma avaliação dos aspectos do código:
 
-1. **Documentação Detalhada**: A documentação do código é essencial para facilitar a compreensão. Adicione comentários explicativos no código para melhorar a documentação e esclarecer como os métodos funcionam.
+1. **Documentação Detalhada**: A documentação é fundamental para compreender o código. Foram adicionados comentários explicativos nos trechos críticos do código para melhor documentação e para esclarecer o funcionamento dos métodos.
 
-2. **Comentários no Código**: Comentários foram adicionados em trechos críticos do código para explicar a lógica e o funcionamento.
+2. **Comentários no Código**: Comentários foram incluídos em partes importantes do código para explicar a lógica e o funcionamento.
 
-3. **Exceções e Tratamento de Erros**: Saliente a importância do tratamento de exceções para evitar problemas inesperados durante a execução do código.
+3. **Exceções e Tratamento de Erros**: É enfatizada a importância do tratamento de exceções para evitar problemas inesperados durante a execução do código.
 
-4. **Melhorias de Nomenclatura**: As variáveis `nome` e `result` foram renomeadas para `nomeDoUsuario` e `autenticado`, tornando o código mais legível.
+4. **Melhorias de Nomenclatura**: As variáveis `nome` e `result` foram renomeadas para `nomeDoUsuario` e `autenticado` para aumentar a legibilidade do código.
 
 5. **Arquitetura e Organização**: Recomenda-se organizar o código em pacotes ou classes para melhorar a arquitetura e modularidade.
 
-6. **Fechamento de Conexões**: Reforce a necessidade de fechar as conexões com o banco de dados de forma apropriada para evitar vazamentos de recursos.
+6. **Fechamento de Conexões**: É reforçada a necessidade de fechar as conexões com o banco de dados de forma apropriada para evitar vazamentos de recursos.
 
 ## Grafo de Fluxo
 
@@ -33,7 +33,7 @@ Aqui está uma avaliação dos aspectos do código:
 
 ## Complexidade Ciclomática
 
-O cálculo da complexidade ciclomática é:
+O cálculo da complexidade ciclomática é o seguinte:
 
 M = E - N + 2P
 M = 8 - 7 + 2 * 1
@@ -47,5 +47,3 @@ Aqui estão os caminhos identificados no grafo de fluxo:
 1. Início → conectarBD() → verificarUsuario() → Fim
 2. Início → conectarBD() → verificarUsuario() → Conexão com sucesso → Fim
 3. Início → conectarBD() → verificarUsuario() → Conexão com falha → Fim
-
-Lembre-se de que esta é uma versão aprimorada do seu README, tornando-o mais informativo e fácil de entender para outros desenvolvedores que revisarem o projeto. Certifique-se de que todas as informações estejam bem organizadas e de fácil acesso. Se houver mais melhorias específicas que você gostaria de adicionar, sinta-se à vontade para fazê-lo.
