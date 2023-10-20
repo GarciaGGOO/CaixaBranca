@@ -1,46 +1,53 @@
-# Teste de Caixa Branca - ETAPA 1
+# Teste de Caixa Branca - ETAPA 3
 
-# Estrutura do Código
+## Introdução
 
-O código está organizado em uma classe Java chamada User. Esta classe tem os seguintes métodos e variáveis:
+Este repositório contém um código que se refere a uma conexão hipotética com um banco de dados.
+
+## Estrutura do Código
+
+O código está organizado em uma classe Java chamada `User`. Nesta classe, você encontrará os seguintes métodos e variáveis:
 
 - `conectarBD()`: Este método estabelece uma conexão com o banco de dados MySQL e retorna a conexão.
-- `verificarUsuario(String login, String senha)`: Este método verifica as credenciais do usuário no banco de dados e armazena o resultado em uma variável booleana `result` e o nome do usuário em `nome`.
+- `verificarUsuario(String login, String senha)`: Este método verifica as credenciais do usuário no banco de dados e armazena o resultado em uma variável booleana `autenticado` e o nome do usuário em `nomeDoUsuario`.
 
-## Erros Encontrados
+## Avaliação
+Aqui está uma avaliação dos aspectos do código:
 
-Durante a análise do código, foram identificados dois erros:
+1. **Documentação**: O código não possui documentação. Recomenda-se adicionar comentários explicativos para melhor compreensão.
 
-1. **Erro de Tipo Público User**: O código apresenta o erro "O tipo público User deve ser definido em seu próprio arquivo Java(16777541)". Isso indica que a classe `User` deve ser definida em seu próprio arquivo Java, em vez de estar incluída em outro arquivo.
+2. **Nomenclatura de Variáveis**: A maioria das variáveis tem nomes razoáveis, mas podem ser mais descritivos. Por exemplo, `nome` e `result` poderiam ter nomes mais explicativos.
 
-2. **Método `newInstance()` Obsoleto**: Foi identificado que o método `newInstance()` do tipo `Class<?>` está obsoleto desde a versão 9 do Java(67110270). Isso significa que o uso desse método pode não ser apropriado nas versões mais recentes do Java.
+3. **Legibilidade e Organização**: A formatação do código pode ser melhorada para torná-lo mais legível. Usar espaços em branco e recuo adequados. Além disso, adicionar tratamento de exceções para lidar com erros é de suma importância.
 
-# Melhorias Sugeridas
+4. **Tratamento de NullPointers**: Não há tratamento adequado para exceções ou verificação de valores nulos. É importante acrescentar tratamento de exceções para evitar erros que não foram tratados.
 
-## Documentação do Código
+5. **Arquitetura**: A arquitetura não está bem definida neste código isolado. Mostrando uma extrema desorganização na hora de compreender a totalidade do código.
 
-- Adicione comentários explicativos no código para fornecer informações sobre o propósito e funcionamento de métodos, variáveis e lógica complexa.
+6. **Fechamento de Conexões**: As conexões com o banco de dados não são fechadas corretamente após o uso. Fechar as conexões, instruções e resultados para evitar vazamentos de recursos seria uma boa opção.
 
-## Nomenclatura de Variáveis
 
-- Renomeie variáveis para nomes mais descritivos que reflitam claramente o seu significado. Por exemplo, considere renomear "nome" para "nomeDoUsuario" e "result" para "autenticado".
+# Autenticação de Usuário e Conexão com Banco de Dados
 
-## Legibilidade e Organização
+Este repositório contém uma classe Java chamada "User" para autenticação de usuário e estabelecimento de uma conexão com um banco de dados MySQL.
 
-- Aprimore a formatação do código, garantindo o uso adequado de espaços em branco e recuo consistente para melhorar a legibilidade.
+## Classe User
 
-## Avaliação do Código
+A classe `User` possui os seguintes métodos e variáveis:
 
-### Tratamento de Exceções
+- `conectarBD()`: Método para estabelecer uma conexão com o banco de dados MySQL.
 
-- Implemente tratamento de exceções apropriado para lidar com erros potenciais. Por exemplo, no método `conectarBD()`, adicione um bloco `try-catch` para capturar e gerenciar exceções relacionadas à conexão com o banco de dados.
+- `verificarUsuario(String login, String senha)`: Método para verificar as credenciais de login de um usuário no banco de dados.
 
-### Arquitetura do Código
+- `nome`: Uma variável de instância para armazenar o nome do usuário.
 
-- Considere a arquitetura geral do projeto e organize o código de acordo com os princípios de design relevantes. Certifique-se de que o código seja modular e siga as melhores práticas de organização.
+- `result`: Uma variável de instância para armazenar o resultado da autenticação (verdadeiro se autenticado, falso caso contrário).
 
-### Fechamento de Conexões
+## Uso
 
-- Certifique-se de que todas as conexões com o banco de dados sejam fechadas de forma adequada após o uso, preferencialmente usando blocos `try-catch-finally` para garantir o fechamento, mesmo em caso de exceção.
+Você pode usar a classe `User` para se conectar a um banco de dados MySQL e verificar as credenciais do usuário. Aqui está um exemplo básico:
 
-Essas sugestões visam aprimorar o código, abordando sua estrutura e avaliando aspectos específicos relacionados ao tratamento de exceções, arquitetura e gerenciamento de recursos. É importante adaptar essas recomendações às necessidades do projeto e testar o código após as modificações para garantir seu funcionamento adequado.
+```java
+User user = new User();
+String login = "user123";
+String senha = "senha123";
