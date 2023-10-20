@@ -1,46 +1,51 @@
-# Teste de Caixa Branca - ETAPA 1
+# Teste de Caixa Branca - ETAPA 2
 
-# Estrutura do Código
+## Introdução
 
-O código está organizado em uma classe Java chamada User. Esta classe tem os seguintes métodos e variáveis:
+O código presente no repositório trata-se de uma conexão com um banco de dados hipotético.
+
+## Estrutura do Código
+
+O código está organizado em uma classe Java chamada `User`. Esta classe tem os seguintes métodos e variáveis:
 
 - `conectarBD()`: Este método estabelece uma conexão com o banco de dados MySQL e retorna a conexão.
 - `verificarUsuario(String login, String senha)`: Este método verifica as credenciais do usuário no banco de dados e armazena o resultado em uma variável booleana `result` e o nome do usuário em `nome`.
 
-## Erros Encontrados
+## Avaliação
 
-Durante a análise do código, foram identificados dois erros:
+Aqui está uma avaliação dos aspectos do código:
 
-1. **Erro de Tipo Público User**: O código apresenta o erro "O tipo público User deve ser definido em seu próprio arquivo Java(16777541)". Isso indica que a classe `User` deve ser definida em seu próprio arquivo Java, em vez de estar incluída em outro arquivo.
+1. **Documentação Detalhada**: A documentação do código é essencial para facilitar a compreensão. Adicione comentários explicativos no código para melhorar a documentação e esclarecer como os métodos funcionam.
 
-2. **Método `newInstance()` Obsoleto**: Foi identificado que o método `newInstance()` do tipo `Class<?>` está obsoleto desde a versão 9 do Java(67110270). Isso significa que o uso desse método pode não ser apropriado nas versões mais recentes do Java.
+2. **Comentários no Código**: Comentários foram adicionados em trechos críticos do código para explicar a lógica e o funcionamento.
 
-# Melhorias Sugeridas
+3. **Exceções e Tratamento de Erros**: Saliente a importância do tratamento de exceções para evitar problemas inesperados durante a execução do código.
 
-## Documentação do Código
+4. **Melhorias de Nomenclatura**: As variáveis `nome` e `result` foram renomeadas para `nomeDoUsuario` e `autenticado`, tornando o código mais legível.
 
-- Adicione comentários explicativos no código para fornecer informações sobre o propósito e funcionamento de métodos, variáveis e lógica complexa.
+5. **Arquitetura e Organização**: Recomenda-se organizar o código em pacotes ou classes para melhorar a arquitetura e modularidade.
 
-## Nomenclatura de Variáveis
+6. **Fechamento de Conexões**: Reforce a necessidade de fechar as conexões com o banco de dados de forma apropriada para evitar vazamentos de recursos.
 
-- Renomeie variáveis para nomes mais descritivos que reflitam claramente o seu significado. Por exemplo, considere renomear "nome" para "nomeDoUsuario" e "result" para "autenticado".
+## Grafo de Fluxo
 
-## Legibilidade e Organização
+![Grafo de Fluxo](https://github.com/NicolasSegat0/CaixaBrancaTeste/assets/100158925/5e1b4937-2c10-4878-8169-e13c74b8abe6)
 
-- Aprimore a formatação do código, garantindo o uso adequado de espaços em branco e recuo consistente para melhorar a legibilidade.
+## Complexidade Ciclomática
 
-## Avaliação do Código
+O cálculo da complexidade ciclomática é:
 
-### Tratamento de Exceções
+M = E - N + 2P
+M = 8 - 7 + 2 * 1
+M = 1 + 2
+M = 3
 
-- Implemente tratamento de exceções apropriado para lidar com erros potenciais. Por exemplo, no método `conectarBD()`, adicione um bloco `try-catch` para capturar e gerenciar exceções relacionadas à conexão com o banco de dados.
+## Caminhos no Grafo de Fluxo
 
-### Arquitetura do Código
+Aqui estão os caminhos identificados no grafo de fluxo:
 
-- Considere a arquitetura geral do projeto e organize o código de acordo com os princípios de design relevantes. Certifique-se de que o código seja modular e siga as melhores práticas de organização.
+1. Início → conectarBD() → verificarUsuario() → Fim
+2. Início → conectarBD() → verificarUsuario() → Conexão com sucesso → Fim
+3. Início → conectarBD() → verificarUsuario() → Conexão com falha → Fim
 
-### Fechamento de Conexões
-
-- Certifique-se de que todas as conexões com o banco de dados sejam fechadas de forma adequada após o uso, preferencialmente usando blocos `try-catch-finally` para garantir o fechamento, mesmo em caso de exceção.
-
-Essas sugestões visam aprimorar o código, abordando sua estrutura e avaliando aspectos específicos relacionados ao tratamento de exceções, arquitetura e gerenciamento de recursos. É importante adaptar essas recomendações às necessidades do projeto e testar o código após as modificações para garantir seu funcionamento adequado.
+Lembre-se de que esta é uma versão aprimorada do seu README, tornando-o mais informativo e fácil de entender para outros desenvolvedores que revisarem o projeto. Certifique-se de que todas as informações estejam bem organizadas e de fácil acesso. Se houver mais melhorias específicas que você gostaria de adicionar, sinta-se à vontade para fazê-lo.
